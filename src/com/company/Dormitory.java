@@ -1,6 +1,9 @@
 package com.company;
 
-public class Dormitory extends Family implements Rent{
+import com.company.Interfaces.Live;
+import com.company.Interfaces.Rent;
+
+public class Dormitory extends Family implements Rent, Live {
     public Dormitory(int quantity, String address) {
         super(quantity, address);
     }
@@ -10,7 +13,8 @@ public class Dormitory extends Family implements Rent{
         System.out.println("We pay rent for dormitory in "+getAddress());
     }
 
-    public void getInfo(){
+    @Override
+    public void live() {
         System.out.println("address is: "+getAddress()+", family members: "+getQuantity());
     }
 }

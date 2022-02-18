@@ -1,6 +1,9 @@
 package com.company;
 
-public class Flat extends Family implements Utilities{
+import com.company.Interfaces.Live;
+import com.company.Interfaces.Utilities;
+
+public class Flat extends Family implements Utilities, Live {
 
 
     public Flat(int quantity, String address) {
@@ -13,7 +16,8 @@ public class Flat extends Family implements Utilities{
         System.out.println("We pay utilities for flat in "+getAddress());
     }
 
-    public void getInfo(){
+    @Override
+    public void live() {
         System.out.println("address is: "+getAddress()+", family members:"+getQuantity());
     }
 }
